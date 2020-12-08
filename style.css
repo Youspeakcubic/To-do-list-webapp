@@ -1,0 +1,44 @@
+
+button{
+  padding:20px;
+  background-color: #D47100;
+  font-family: 'Nerko One', cursive;
+
+}
+header{
+  background-color:grey;
+  position: fixed;
+  top:0;
+  left:0;
+  width:50%;
+  border: 3px solid #D47100;
+}
+h1{
+  color:orange;
+    padding:0;
+    font-family: 'Nerko One', cursive;
+}
+body{
+  background-color: orange;
+}
+.listContainer{
+  border: 8px solid #D47100;
+  position:fixed;
+  top:13.5%;
+  left:0;
+  height: 100%;
+  width: 50%;
+}
+.addContainer{
+  position: fixed;
+  bottom: 0;
+  left:0;
+}
+.addingInp{
+  font-size: 45px;
+  font-family: 'Nerko One', cursive;
+}
+.pageTitle{
+  font-size: 38px
+
+}
