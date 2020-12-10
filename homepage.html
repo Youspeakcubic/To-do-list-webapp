@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <meta charset="utf-8">
     <title>To do list - Anthony De la Torre</title>
   </head>
@@ -11,11 +12,13 @@
     <h1 class="pageTitle"> To Do list:</h1>
     <br />
     <div id= "date"></div>
+    <button class="loadBtn" id="loadBtn" onClick="loadList()">Load previous Entries</button>
+    <button class="saveBtn" id="saveBtn" onClick="saveEntries()">Save Entries</button>
   </header>
   <body>
     <div class = listContainer id= list></div>
     <ul class= "addContainer">
-    <input class= "addingInp" type="text" id="item" placeholder="What do i need to do?" ></input>
+    <input class= "addingInp" type="text" id="item" placeholder="What do i need to do?" >
     <button class="addBtn" id="addBtn" onClick="addToList()">Add to List!</button>
     <script src="Todo.js"></script>
   </div>
