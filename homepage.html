@@ -17,19 +17,19 @@
   </header>
   <body>
     <h1>Today</h1>
-    <div class = listContainerToday id= listToday><h1>Today</h1></div>
-    <div class = listContainerTommorow id= listTommorow><h1>Tommorow</h1></div>
-    <div class = listContainerThisWeek id= listThisWeek><h1>This Week</h1></div>
-    <div class = listContainerThisMonth id= listThisMonth><h1>This Month</h1></div>
+    <div class = listContainerToday id= Today><h1>Today</h1></div>
+    <div class = listContainerTommorow id= Tommorow><h1>Tommorow</h1></div>
+    <div class = listContainerThisWeek id= Week><h1>This Week</h1></div>
+    <div class = listContainerThisMonth id= Month><h1>This Month</h1></div>
     <ul class= "addContainer">
     <input class= "addingInp" type="text" id="item" placeholder="What do i need to do?" >
     <select id = 'dropUp'>
         <option>Today</option>
         <option>Tommorow</option>
-        <option>This week</option>
-        <option>This month</option>
+        <option>Week</option>
+        <option>Month</option>
     </select>
-    <button class="addBtn" id="addBtn" onClick="addToList()">Add to List!</button>
+    <button class="addBtn" id="addBtn" onClick="addToList(choice)">Add to List!</button>
     <script src="Todo.js"></script>
   </div>
   </body>

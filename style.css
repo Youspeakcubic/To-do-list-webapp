@@ -16,6 +16,7 @@ header {
   width: 100%;
   border: 3px solid #d47100;
   height:12%;
+  display: flex;
 }
 h1 {
   color: #F7810A;
@@ -37,6 +38,7 @@ li{
   left: 0;
   height: 20%;
   width: 100%;
+  overflow-y:auto;
 }
 .listContainerTommorow {
   border: 8px solid #d47100;
@@ -45,6 +47,7 @@ li{
   left: 0;
   height: 20%;
   width: 100%;
+  overflow-y:auto;
 }
 .listContainerThisWeek {
   border: 8px solid #d47100;
@@ -53,6 +56,7 @@ li{
   left: 0;
   height: 20%;
   width: 100%;
+  overflow-y:auto;
 }
 .listContainerThisMonth {
   border: 8px solid #d47100;
@@ -61,6 +65,7 @@ li{
   left: 0;
   height: 20%;
   width: 100%;
+  overflow-y: auto;
 }
 .addContainer {
   position: fixed;
