@@ -31,10 +31,10 @@ function saveEntries() {
   let finalListTommorow = document.getElementById("Tommorow");
   let finalListThisWeek = document.getElementById("Week");
   let finalListThisMonth = document.getElementById("Month");
-  localStorage.setItem("Today", finalListToday.innerHTML);
-  localStorage.setItem("Tommorow", finalListTommorow.innerHTML);
-  localStorage.setItem("Week", finalListThisWeek.innerHTML);
-  localStorage.setItem("Month", finalListThisMonth.innerHTML);
+  localStorage.setItem("saveListToday", finalListToday.innerHTML);
+  localStorage.setItem("saveListTommorow", finalListTommorow.innerHTML);
+  localStorage.setItem("saveListThisWeek", finalListThisWeek.innerHTML);
+  localStorage.setItem("saveListThisMonth", finalListThisMonth.innerHTML);
 }
 //Load list function take previously saved saveList keys and inserts it to the proper list container.
 function loadList() {
