@@ -9,45 +9,35 @@ let choice = document.getElementById("dropUp").value;
 // addToList starts the adding process by checking the drop down value to see which list container to send the input to
 function addToList(choice) {
   let inp = document.getElementById("item").value;
-  let list = document.getElementById(`${choice}`);
-  console.log(`${choice}`);
+  let list = document.getElementById(`${choice}`); // choice is the value of the the drop down menu which we declared earlier in the file
   //if statement that does not allow the function to proceed if the input form is empty.
   if (document.getElementById("item").value == "") {
     document.getElementById("item").placeholder = "Please enter something";
   } else {
-      choice = document.getElementById("dropUp").value;
-      let node = document.createElement("LI");
-      let textNode = document.createTextNode(`-${inp}`);
-      node.appendChild(textNode);
-      document.getElementById(`${choice}`).appendChild(node);
-      document.getElementById("item").value = "";
-      document.getElementById("item").placeholder = "What do i need to do?";
-      console.log(dropUp.value);
+    // else statement updates choice value and adds the value of inp(Text in the input form) and adds it to the current list as a text node.
+    choice = document.getElementById("dropUp").value;
+    let node = document.createElement("LI");
+    let textNode = document.createTextNode(`-${inp}`);
+    node.appendChild(textNode);
+    document.getElementById(`${choice}`).appendChild(node);
+    document.getElementById("item").value = "";
+    document.getElementById("item").placeholder = "What do i need to do?";
   }
 }
-//Save entries function takes the html of the list container and saves it as the saveList key, this is done for each of the containers.
+// The save entries function first gets the html of all task containers and stores them in an array afterwards. The function then stores said array in localstorage as a json object.
 function saveEntries() {
-  let finalListToday = document.getElementById("Today");
-  let finalListTommorow = document.getElementById("Tommorow");
-  let finalListThisWeek = document.getElementById("Week");
-  let finalListThisMonth = document.getElementById("Month");
-  localStorage.setItem("saveListToday", finalListToday.innerHTML);
-  localStorage.setItem("saveListTommorow", finalListTommorow.innerHTML);
-  localStorage.setItem("saveListThisWeek", finalListThisWeek.innerHTML);
-  localStorage.setItem("saveListThisMonth", finalListThisMonth.innerHTML);
+  let todayData = document.getElementById("Today").innerHTML;
+  let tomorrowData = document.getElementById("Tommorow").innerHTML;
+  let weekData = document.getElementById("Week").innerHTML;
+  let monthData = document.getElementById("Month").innerHTML;
+  let saveArray = [todayData, tomorrowData, weekData, monthData];
+  localStorage.setItem("saveList", JSON.stringify(saveArray));
 }
-//Load list function take previously saved saveList keys and inserts it to the proper list container.
+//Load list function gets the saved array from local storage and then sets each value in the array to the corresponding container.
 function loadList() {
-  document.getElementById("Today").innerHTML = localStorage.getItem(
-    "saveListToday"
-  );
-  document.getElementById("Tommorow").innerHTML = localStorage.getItem(
-    "saveListTommorow"
-  );
-  document.getElementById("Week").innerHTML = localStorage.getItem(
-    "saveListThisWeek"
-);
-  document.getElementById("Month").innerHTML = localStorage.getItem(
-    "saveListThisMonth"
-  );
+  saveListArray = JSON.parse(localStorage.getItem("saveList"));
+  document.getElementById("Today").innerHTML = saveListArray[0];
+  document.getElementById("Tommorow").innerHTML = saveListArray[1];
+  document.getElementById("Week").innerHTML = saveListArray[2];
+  document.getElementById("Month").innerHTML = saveListArray[3];
 }
